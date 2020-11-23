@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Geomatic.Core\Crawling.Geomatic.Core.csproj" />
+    <ProjectReference Include="..\..\..\src\Geomatic.Crawling\Crawling.Geomatic.csproj" />
+    <ProjectReference Include="..\..\..\src\Geomatic.Infrastructure\Crawling.Geomatic.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
