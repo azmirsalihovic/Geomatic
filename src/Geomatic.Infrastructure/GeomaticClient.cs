@@ -6,10 +6,10 @@ using CluedIn.Crawling.Geomatic.Core;
 using Newtonsoft.Json;
 using RestSharp;
 using Microsoft.Extensions.Logging;
-using System.Collections;
 using CluedIn.Crawling.Geometic.Core.Models;
 using System.Collections.Generic;
 using Microsoft.VisualBasic.FileIO;
+using System.Text;
 
 namespace CluedIn.Crawling.Geomatic.Infrastructure
 {
@@ -71,7 +71,9 @@ namespace CluedIn.Crawling.Geomatic.Infrastructure
 
         public IEnumerable<Metadata> Get(string filepath)
         {
-            using (var parser = new TextFieldParser(filepath))
+            var defaultEncoding = Encoding.UTF8;
+
+            using (var parser = new TextFieldParser(filepath, defaultEncoding))
             {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.HasFieldsEnclosedInQuotes = true;
@@ -91,7 +93,92 @@ namespace CluedIn.Crawling.Geomatic.Infrastructure
                         KUNTLF = fields[6],
                         CPRNUM = fields[7],
                         CPRNUM2 = fields[8],
-                        CVRNUM = fields[9]
+                        CVRNUM = fields[9],
+                        OutputName = fields[10],
+                        OutputNameFirst = fields[11],
+                        OutputNameLast = fields[12],
+                        OutputKvhx = fields[13],
+                        OutputCareof = fields[14],
+                        OutputLokalitet = fields[15],
+                        OutputStreetline = fields[16],
+                        OutputStednavn = fields[17],
+                        OutputPcode = fields[18],
+                        OutputPdistname = fields[19],
+                        OutputStrname = fields[20],
+                        OutputHounoNum = fields[21],
+                        OutputHounoAlpha = fields[22],
+                        OutputFloor = fields[23],
+                        OutputSuite = fields[24],
+                        Mobile = fields[25],
+                        Landline = fields[26],
+                        InputKvhx = fields[27],
+                        InputUnadrMatchlvlDetail = fields[28],
+                        PartnerRemoved = fields[29],
+                        OutputAddressOrigin = fields[30],
+                        OutputNameOrigin = fields[31],
+                        AddressChange = fields[32],
+                        Duplicate = fields[33],
+                        DuplicateId = fields[34],
+                        Per1PnrValidation = fields[35],
+                        Per2PnrValidation = fields[36],
+                        Per1InputName = fields[37],
+                        Per1CprMatch = fields[38],
+                        Per1CprStatus = fields[39],
+                        Per1Protect = fields[40],
+                        Per1AdvptectRobinson = fields[41],
+                        Per1AdvptectRobinsonDate = fields[42],
+                        Per1Movdat = fields[43],
+                        Per1NameFirsts = fields[44],
+                        Per1NameLast = fields[45],
+                        Per1NameAdr = fields[46],
+                        Per1Careof = fields[47],
+                        Per1Lokalitet = fields[48],
+                        Per1Streetline = fields[49],
+                        Per1Stednavn = fields[50],
+                        Per1Pcode = fields[51],
+                        Per1Pdistname = fields[52],
+                        Per1Kvhx = fields[53],
+                        Per1AdrContact1 = fields[54],
+                        Per1AdrContact2 = fields[55],
+                        Per1AdrContact3 = fields[56],
+                        Per1AdrContact4 = fields[57],
+                        Per1AdrContact5 = fields[58],
+                        Per1AdrContactDate = fields[59],
+                        Per1AdrForeign1 = fields[60],
+                        Per1AdrForeign2 = fields[61],
+                        Per1AdrForeign3 = fields[62],
+                        Per1AdrForeign4 = fields[63],
+                        Per1AdrForeign5 = fields[64],
+                        Per1AdrForeignDate = fields[65],
+                        Per2InputName = fields[66],
+                        Per2CprMatch = fields[67],
+                        Per2CprStatus = fields[68],
+                        Per2Protect = fields[69],
+                        Per2AdvptectRobinson = fields[70],
+                        Per2AdvptectRobinsonDate = fields[71],
+                        Per2Movdat = fields[72],
+                        Per2NameFirsts = fields[73],
+                        Per2NameLast = fields[74],
+                        Per2NameAdr = fields[75],
+                        Per2Careof = fields[76],
+                        Per2Lokalitet = fields[77],
+                        Per2Streetline = fields[78],
+                        Per2Stednavn = fields[79],
+                        Per2Pcode = fields[80],
+                        Per2Pdistname = fields[81],
+                        Per2Kvhx = fields[82],
+                        Per2AdrContact1 = fields[83],
+                        Per2AdrContact2 = fields[84],
+                        Per2AdrContact3 = fields[85],
+                        Per2AdrContact4 = fields[86],
+                        Per2AdrContact5 = fields[87],
+                        Per2AdrContactDate = fields[88],
+                        Per2AdrForeign1 = fields[89],
+                        Per2AdrForeign2 = fields[90],
+                        Per2AdrForeign3 = fields[91],
+                        Per2AdrForeign4 = fields[92],
+                        Per2AdrForeign5 = fields[93],
+                        Per2AdrForeignDate = fields[94]
                     };
 
                     yield return rowObj;
