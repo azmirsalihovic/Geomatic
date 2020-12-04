@@ -10,6 +10,7 @@ namespace CluedIn.Crawling.Geomatic.Core
         public struct KeyName
         {
             public const string ApiKey = nameof(ApiKey);
+            public const string FilePath = nameof(FilePath);
         }
 
         // TODO Complete the following section

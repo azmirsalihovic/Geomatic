@@ -9,7 +9,8 @@ namespace CluedIn.Crawling.Geomatic.Integration.Test
     {
       return new Dictionary<string, object>
             {
-                { GeomaticConstants.KeyName.ApiKey, "demo" }
+                { GeomaticConstants.KeyName.ApiKey, "demo" },
+                { GeomaticConstants.KeyName.FilePath, @"C:\Users\asa\Documents\CluedIn\Crawling.FileGenerator-master\Crawling.FileGenerator-master\CSVFileGenerator\CSV\SEMLER.DATA.csv" }
             };
     }
   }

@@ -23,8 +23,10 @@ namespace CluedIn.Crawling.Geomatic
 
             var client = clientFactory.CreateNew(geomaticcrawlJobData);
 
-            //retrieve data from provider and yield objects
-            
-        }       
+            foreach (var item in client.Get(geomaticcrawlJobData.FilePath))
+            {
+                yield return item;
+            }
+        }
     }
 }

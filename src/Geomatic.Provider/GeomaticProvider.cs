@@ -41,6 +41,9 @@ namespace CluedIn.Provider.Geomatic
             if (configuration.ContainsKey(GeomaticConstants.KeyName.ApiKey))
             { geomaticCrawlJobData.ApiKey = configuration[GeomaticConstants.KeyName.ApiKey].ToString(); }
 
+            if (configuration.ContainsKey(GeomaticConstants.KeyName.FilePath))
+            { geomaticCrawlJobData.FilePath = configuration[GeomaticConstants.KeyName.FilePath].ToString(); }
+
             return await Task.FromResult(geomaticCrawlJobData);
         }
 
