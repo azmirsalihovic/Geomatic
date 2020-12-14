@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 
 namespace CluedIn.Crawling.Geometic.Core.Models
 {
-    public class Metadata
+    [DisplayName("Account")]
+    public class Account
     {
+        public const string SObjectTypeName = "Account";
+
         public string FHANUM { get; set; }
         public string KUNLOEB { get; set; }
         public string NAVN { get; set; }

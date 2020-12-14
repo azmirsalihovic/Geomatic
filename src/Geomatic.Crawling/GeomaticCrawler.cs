@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CluedIn.Core.Crawling;
 using CluedIn.Crawling.Geomatic.Core;
 using CluedIn.Crawling.Geomatic.Infrastructure.Factories;
+using CluedIn.Crawling.Geometic.Core.Models;
 
 namespace CluedIn.Crawling.Geomatic
 {
@@ -25,7 +26,29 @@ namespace CluedIn.Crawling.Geomatic
 
             foreach (var item in client.Get(geomaticcrawlJobData.FilePath))
             {
-                yield return item;
+                if (!string.IsNullOrEmpty(item.KUNLOEB))
+                {
+                    //yield return item;
+                    if (string.IsNullOrEmpty(item.CVRNUM))
+                    {
+                        var user = new PrivateCustomer();
+                        foreach (var property in user.GetType().GetProperties())
+                        {
+                            property.SetValue(user, item.GetType().GetProperty(property.Name).GetValue(item));
+                        }
+                        yield return user;
+                        //yield return item;
+                    }
+                    else
+                    {
+                        var organization = new BusinessCustomer();
+                        foreach (var property in organization.GetType().GetProperties())
+                        {
+                            property.SetValue(organization, item.GetType().GetProperty(property.Name).GetValue(item));
+                        }
+                        yield return organization;
+                    }
+                }
             }
         }
     }

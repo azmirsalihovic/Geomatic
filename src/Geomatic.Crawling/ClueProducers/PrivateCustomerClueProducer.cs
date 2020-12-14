@@ -11,19 +11,19 @@ using System;
 
 namespace CluedIn.Crawling.Geometic.ClueProducers
 {
-    public class MetadataClueProducer : BaseClueProducer<Metadata>
+    public class PrivateCustomerClueProducer : BaseClueProducer<PrivateCustomer>
     {
         private readonly IClueFactory _factory;
 
-        public MetadataClueProducer(IClueFactory factory)
+        public PrivateCustomerClueProducer(IClueFactory factory)
         {
             _factory = factory;
         }
 
-        protected override Clue MakeClueImpl(Metadata input, Guid id)
+        protected override Clue MakeClueImpl(PrivateCustomer input, Guid id)
         {
 
-            var clue = _factory.Create(EntityType.Unknown, input.KUNLOEB, id);//ToDo EntityType...
+            var clue = _factory.Create(EntityType.Infrastructure.User, input.KUNLOEB, id);//ToDo EntityType...
 
             var data = clue.Data.EntityData;
 
@@ -33,7 +33,7 @@ namespace CluedIn.Crawling.Geometic.ClueProducers
             if (!data.OutgoingEdges.Any())
                 _factory.CreateEntityRootReference(clue, EntityEdgeType.PartOf);
 
-            var vocab = new MetadataVocabulary();
+            var vocab = new PrivateCustomerVocabulary();
             if (input.FHANUM != null)
                 data.Properties[vocab.FHANUM] = input.FHANUM.PrintIfAvailable();
             if (input.KUNLOEB != null)
@@ -85,9 +85,17 @@ namespace CluedIn.Crawling.Geometic.ClueProducers
             if (input.OutputSuite != null)
                 data.Properties[vocab.OutputSuite] = input.OutputSuite.PrintIfAvailable();
             if (input.Mobile != null)
+            {
                 data.Properties[vocab.Mobile] = input.Mobile.PrintIfAvailable();
+                data.Aliases.Add(input.Mobile);
+            }
+
             if (input.Landline != null)
+            {
                 data.Properties[vocab.Landline] = input.Landline.PrintIfAvailable();
+                data.Aliases.Add(input.Landline);
+            }
+
             if (input.InputKvhx != null)
                 data.Properties[vocab.InputKvhx] = input.InputKvhx.PrintIfAvailable();
             if (input.InputUnadrMatchlvlDetail != null)

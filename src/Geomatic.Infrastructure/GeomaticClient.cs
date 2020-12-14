@@ -10,6 +10,7 @@ using CluedIn.Crawling.Geometic.Core.Models;
 using System.Collections.Generic;
 using Microsoft.VisualBasic.FileIO;
 using System.Text;
+using System.IO;
 
 namespace CluedIn.Crawling.Geomatic.Infrastructure
 {
@@ -69,11 +70,12 @@ namespace CluedIn.Crawling.Geomatic.Infrastructure
             return new AccountInformation("", "");
         }
 
-        public IEnumerable<Metadata> Get(string filepath)
+        public IEnumerable<Account> Get(string filepath)
         {
-            var defaultEncoding = Encoding.UTF8;
+            //var defaultEncoding = Encoding.UTF8;
+            var defaultEncoding = Encoding.GetEncoding("ISO-8859-1");
 
-            using (var parser = new TextFieldParser(filepath, defaultEncoding))
+            using (var parser = new TextFieldParser(filepath, defaultEncoding))// Encoding.Default))
             {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.HasFieldsEnclosedInQuotes = true;
@@ -82,7 +84,7 @@ namespace CluedIn.Crawling.Geomatic.Infrastructure
                 while (!parser.EndOfData)
                 {
                     var fields = parser.ReadFields();
-                    var rowObj = new Metadata
+                    var rowObj = new Account
                     {
                         FHANUM = fields[0],
                         KUNLOEB = fields[1],

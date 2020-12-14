@@ -3,16 +3,16 @@ using CluedIn.Core.Data.Vocabularies;
 
 namespace CluedIn.Crawling.Geometic.Vocabularies
 {
-    public class MetadataVocabulary : SimpleVocabulary
+    public class PrivateCustomerVocabulary : SimpleVocabulary
     {
-        public MetadataVocabulary()
+        public PrivateCustomerVocabulary()
         {
-            VocabularyName = "Geometic Metadata"; // TODO: Set value
-            KeyPrefix = "geometic.metadata"; // TODO: Set value
+            VocabularyName = "Geometic Private Customer"; // TODO: Set value
+            KeyPrefix = "geometic.privatecustomer"; // TODO: Set value
             KeySeparator = ".";
-            Grouping = EntityType.Unknown; // TODO: Set value
+            Grouping = EntityType.Infrastructure.User; // TODO: Set value
 
-            AddGroup("Metadata Details", group =>
+            AddGroup("Geometic Private Customer Details", group =>
             {
                 FHANUM = group.Add(new VocabularyKey("FHANUM", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("FHANUM"));
                 KUNLOEB = group.Add(new VocabularyKey("KUNLOEB", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("KUNLOEB"));
@@ -27,7 +27,7 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
                 OutputName = group.Add(new VocabularyKey("OutputName", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Name"));
                 OutputNameFirst = group.Add(new VocabularyKey("OutputNameFirst", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Name First"));
                 OutputNameLast = group.Add(new VocabularyKey("OutputNameLast", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Name Last"));
-                OutputKvhx = group.Add(new VocabularyKey("OutputKvhx", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Kvhx"));
+                OutputKvhx = group.Add(new VocabularyKey("OutputKvhx", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible).WithDisplayName("Output Kvhx"));
                 OutputCareof = group.Add(new VocabularyKey("OutputCareof", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Careof"));
                 OutputLokalitet = group.Add(new VocabularyKey("OutputLokalitet", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Lokalitet"));
                 OutputStreetline = group.Add(new VocabularyKey("OutputStreetline", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Streetline"));
@@ -41,7 +41,7 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
                 OutputSuite = group.Add(new VocabularyKey("OutputSuite", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Suite"));
                 Mobile = group.Add(new VocabularyKey("Mobile", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Mobile"));
                 Landline = group.Add(new VocabularyKey("Landline", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Landline"));
-                InputKvhx = group.Add(new VocabularyKey("InputKvhx", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Input Kvhx"));
+                InputKvhx = group.Add(new VocabularyKey("InputKvhx", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible).WithDisplayName("Input Kvhx"));
                 InputUnadrMatchlvlDetail = group.Add(new VocabularyKey("InputUnadrMatchlvlDetail", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Input Unadr Matchlvl Detail"));
                 PartnerRemoved = group.Add(new VocabularyKey("PartnerRemoved", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Partner Removed"));
                 OutputAddressOrigin = group.Add(new VocabularyKey("OutputAddressOrigin", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Address Origin"));
@@ -67,7 +67,7 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
                 Per1Stednavn = group.Add(new VocabularyKey("Per1Stednavn", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Stednavn"));
                 Per1Pcode = group.Add(new VocabularyKey("Per1Pcode", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Pcode"));
                 Per1Pdistname = group.Add(new VocabularyKey("Per1Pdistname", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Pdistname"));
-                Per1Kvhx = group.Add(new VocabularyKey("Per1Kvhx", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Kvhx"));
+                Per1Kvhx = group.Add(new VocabularyKey("Per1Kvhx", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Kvhx"));
                 Per1AdrContact1 = group.Add(new VocabularyKey("Per1AdrContact1", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Adr Contact 1"));
                 Per1AdrContact2 = group.Add(new VocabularyKey("Per1AdrContact2", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Adr Contact 2"));
                 Per1AdrContact3 = group.Add(new VocabularyKey("Per1AdrContact3", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Adr Contact 3"));
@@ -96,7 +96,7 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
                 Per2Stednavn = group.Add(new VocabularyKey("Per2Stednavn", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 2 Stednavn"));
                 Per2Pcode = group.Add(new VocabularyKey("Per2Pcode", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 2 Pcode"));
                 Per2Pdistname = group.Add(new VocabularyKey("Per2Pdistname", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 2 Pdistname"));
-                Per2Kvhx = group.Add(new VocabularyKey("Per2Kvhx", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 2 Kvhx"));
+                Per2Kvhx = group.Add(new VocabularyKey("Per2Kvhx", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible).WithDisplayName("Per 2 Kvhx"));
                 Per2AdrContact1 = group.Add(new VocabularyKey("Per2AdrContact1", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 2 Adr Contact 1"));
                 Per2AdrContact2 = group.Add(new VocabularyKey("Per2AdrContact2", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 2 Adr Contact 2"));
                 Per2AdrContact3 = group.Add(new VocabularyKey("Per2AdrContact3", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 2 Adr Contact 3"));
@@ -116,6 +116,63 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
             AddMapping(POSTBY, CluedIn.Core.Data.Vocabularies.Vocabularies.CluedInUser.HomeAddressZipCode);
             AddMapping(KUNTLF, CluedIn.Core.Data.Vocabularies.Vocabularies.CluedInUser.PhoneNumber);
             AddMapping(CVRNUM, CluedIn.Core.Data.Vocabularies.Vocabularies.CluedInOrganization.CodesCVR);
+
+            //Semler vocabs
+            //AddMapping(OutputStreetline, Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(OutputStednavn Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(OutputStrname Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(OutputHounoNum Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(OutputHounoAlpha Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(OutputFloor Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(OutputSuite Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1Lokalitet Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1Streetline Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1Stednavn Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrContact1 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrContact2 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrContact3 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrContact4 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrContact5 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrForeign1 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrForeign2 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrForeign3 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrForeign4 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrForeign5 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2Lokalitet Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2Streetline Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2Stednavn Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2AdrContact1 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2AdrContact2 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2AdrContact3 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per1AdrContact4 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2AdrContact5 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2AdrForeign1 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2AdrForeign2 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2AdrForeign3 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2AdrForeign4 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2AdrForeign5 Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(OutputCareof Semler.Common.Vocabularies.SemlerVocabularies.Contact.COName);
+            //AddMapping(Per1Careof Semler.Common.Vocabularies.SemlerVocabularies.Contact.COName);
+            //AddMapping(Per2Careof Semler.Common.Vocabularies.SemlerVocabularies.Contact.COName);
+            //AddMapping(OutputPdistname Semler.Common.Vocabularies.SemlerVocabularies.Contact.City);
+            //AddMapping(Per1Pdistname Semler.Common.Vocabularies.SemlerVocabularies.Contact.City);
+            //AddMapping(Per2Pdistname Semler.Common.Vocabularies.SemlerVocabularies.Contact.City);
+            //AddMapping(OutputNameFirst Semler.Common.Vocabularies.SemlerVocabularies.Contact.FirstName);
+            //AddMapping(Per1NameFirsts Semler.Common.Vocabularies.SemlerVocabularies.Contact.FirstName);
+            //AddMapping(OutputNameLast Semler.Common.Vocabularies.SemlerVocabularies.Contact.LastName);
+            //AddMapping(OutputNameFirst Semler.Common.Vocabularies.SemlerVocabularies.Contact.LastName);
+            //AddMapping(Per2NameLast Semler.Common.Vocabularies.SemlerVocabularies.Contact.FirstName);
+            //AddMapping(OutputName Semler.Common.Vocabularies.SemlerVocabularies.Contact.Name);
+            //AddMapping(Per1InputName Semler.Common.Vocabularies.SemlerVocabularies.Contact.Name);
+            //AddMapping(Per1NameAdr Semler.Common.Vocabularies.SemlerVocabularies.Contact.Name);
+            //AddMapping(Per2InputName Semler.Common.Vocabularies.SemlerVocabularies.Contact.Name);
+            //AddMapping(Per2NameAdr Semler.Common.Vocabularies.SemlerVocabularies.Contact.Name);
+            //AddMapping(Mobile Semler.Common.Vocabularies.SemlerVocabularies.Contact.PhoneNumber);
+            //AddMapping(OutputPcode Semler.Common.Vocabularies.SemlerVocabularies.Contact.PostalCode);
+            //AddMapping(Per1Pcode Semler.Common.Vocabularies.SemlerVocabularies.Contact.PostalCode);
+            //AddMapping(Per2Pcode Semler.Common.Vocabularies.SemlerVocabularies.Contact.PostalCode);
+            //AddMapping(OutputLokalitet Semler.Common.Vocabularies.SemlerVocabularies.Contact.Address);
+            //AddMapping(Per2NameFirsts Semler.Common.Vocabularies.SemlerVocabularies.Contact.FirstName);
         }
 
         public VocabularyKey FHANUM { get; private set; }
