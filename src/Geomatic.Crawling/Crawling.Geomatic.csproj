@@ -7,4 +7,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CluedIn.Semler.Common" Version="3.0.0-alpha.15" />
+  </ItemGroup>
 </Project>
