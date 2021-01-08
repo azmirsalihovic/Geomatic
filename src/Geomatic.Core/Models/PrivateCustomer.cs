@@ -1,14 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+//using System;
+//using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Data;
 
-namespace CluedIn.Crawling.Geometic.Core.Models
-{
-    [DisplayName("Account")]
-    public class PrivateCustomer : Account
-    {
-        //Inherits from Account
-    }
-}
+//namespace CluedIn.Crawling.Geometic.Core.Models
+//{
+//    [DisplayName("Account")]
+//    public class PrivateCustomer : Account
+//    {
+//        //Inherits from Account
+//    }
+//}
 

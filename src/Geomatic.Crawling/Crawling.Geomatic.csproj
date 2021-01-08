@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\Geomatic.Infrastructure\Crawling.Geomatic.Infrastructure.csproj" />
   </ItemGroup>
@@ -8,6 +8,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CluedIn.Semler.Common" Version="3.0.1-alpha.27" />
+    <PackageReference Include="CluedIn.Semler.Common" />
   </ItemGroup>
 </Project>
