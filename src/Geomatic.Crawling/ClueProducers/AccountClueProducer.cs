@@ -49,10 +49,10 @@ namespace CluedIn.Crawling.Geometic.ClueProducers
             var data = clue.Data.EntityData;
 
             //Create identifiers
-            if (!string.IsNullOrWhiteSpace(input.CVRNUM) && !isPerson)
-            {
-                data.Codes.Add(new EntityCode(EntityType.Organization, Semler.Common.Origins.Cvr, input.CVRNUM));
-            }
+            //if (!string.IsNullOrWhiteSpace(input.CVRNUM) && !isPerson)
+            //{
+            //    data.Codes.Add(new EntityCode(EntityType.Organization, Semler.Common.Origins.Cvr, input.CVRNUM));
+            //}
 
             if (!string.IsNullOrWhiteSpace(input.KUNLOEB))
             {
