@@ -54,6 +54,14 @@ namespace CluedIn.Crawling.Geometic.ClueProducers
                 data.Codes.Add(new EntityCode(EntityType.Organization, Semler.Common.Origins.Cvr, input.CVRNUM));
             }
 
+            if (!string.IsNullOrWhiteSpace(input.KUNLOEB))
+            {
+                if (!isPerson)
+                    data.Codes.Add(new EntityCode(EntityType.Organization, Semler.Common.Origins.KUK, input.KUNLOEB));
+                else
+                    data.Codes.Add(new EntityCode(EntityType.Infrastructure.User, Semler.Common.Origins.KUK, input.KUNLOEB));
+            }
+
             if (!string.IsNullOrWhiteSpace(input.NAVN))
             {
                 data.Name = input.NAVN;
