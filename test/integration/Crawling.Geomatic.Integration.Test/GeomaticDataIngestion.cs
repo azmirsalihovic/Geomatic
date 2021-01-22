@@ -18,7 +18,6 @@ namespace CluedIn.Crawling.Geomatic.Integration.Test
 
         [Theory]
         [InlineData("/Provider/Root", 1)]
-        //[InlineData("/Unknown", 999)]
         [InlineData("/Organization", 151)]
         [InlineData("/Infrastructure/User", 848)]
         //TODO: Add details for the count of entityTypes your test produces
