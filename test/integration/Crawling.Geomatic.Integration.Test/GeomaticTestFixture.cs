@@ -7,11 +7,14 @@ using Xunit.Abstractions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using DebugCrawlerHost = CrawlerIntegrationTesting.CrawlerHost.DebugCrawlerHost<CluedIn.Crawling.Geomatic.Core.GeomaticCrawlJobData>;
+using System.Collections.Generic;
+using CluedIn.Core.Data;
 
 namespace CluedIn.Crawling.Geomatic.Integration.Test
 {
     public class GeomaticTestFixture
     {
+        public List<string> Entities = new List<string>();
         public ClueStorage ClueStorage { get; }
         private readonly DebugCrawlerHost debugCrawlerHost;
 
@@ -29,9 +32,16 @@ namespace CluedIn.Crawling.Geomatic.Integration.Test
 
             Log = debugCrawlerHost.AppContext.Container.Resolve<ILogger<GeomaticTestFixture>>();
 
-            debugCrawlerHost.ProcessClue += ClueStorage.AddClue;
+            //debugCrawlerHost.ProcessClue += ClueStorage.AddClue;
+
+            debugCrawlerHost.ProcessClue += AddClueCount;
 
             debugCrawlerHost.Execute(GeomaticConfiguration.Create(), GeomaticConstants.ProviderId);
+        }
+
+        private void AddClueCount(Clue clue)
+        {
+            Entities.Add(clue.OriginEntityCode.Type.Code);
         }
 
         public void PrintClues(ITestOutputHelper output)
