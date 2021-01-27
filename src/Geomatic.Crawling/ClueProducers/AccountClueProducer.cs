@@ -54,16 +54,16 @@ namespace CluedIn.Crawling.Geometic.ClueProducers
             if (!string.IsNullOrWhiteSpace(input.KUNLOEB))
             {
                 if (!isPerson)
-                    data.Codes.Add(new EntityCode(EntityType.Organization, Semler.Common.Origins.KUK, input.KUNLOEB));
+                    data.Codes.Add(new EntityCode(EntityType.Organization, Semler.Common.Origins.CustId, input.KUNLOEB));
                 else
-                    data.Codes.Add(new EntityCode(EntityType.Infrastructure.User, Semler.Common.Origins.KUK, input.KUNLOEB));
+                    data.Codes.Add(new EntityCode(EntityType.Infrastructure.User, Semler.Common.Origins.CustId, input.KUNLOEB));
             }
 
             if (!string.IsNullOrWhiteSpace(input.NAVN))
             {
                 data.Name = input.NAVN;
                 data.DisplayName = input.NAVN.ToLower().ToTitleCase();
-                data.Aliases.Add(input.NAVN);
+                //data.Aliases.Add(input.NAVN);
             }
 
             if (!data.OutgoingEdges.Any())
