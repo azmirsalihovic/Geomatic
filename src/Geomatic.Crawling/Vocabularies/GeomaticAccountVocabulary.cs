@@ -112,116 +112,42 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
                 Per2AdrForeignDate = group.Add(new VocabularyKey("Per2AdrForeignDate", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 2 Adr Foreign Date"));
             });
 
-            if (!isPersonBool)
+            if (!isPersonBool) //Business
             {
-                //Need to check this out after we get some data from CSV and map the rest of data
-                AddMapping(ADRESSE, CluedIn.Core.Data.Vocabularies.Vocabularies.CluedInOrganization.Address);
-                AddMapping(POSTBY, CluedIn.Core.Data.Vocabularies.Vocabularies.CluedInOrganization.AddressZipCode);
-                AddMapping(KUNTLF, CluedIn.Core.Data.Vocabularies.Vocabularies.CluedInOrganization.PhoneNumber);
-                AddMapping(CVRNUM, CluedIn.Core.Data.Vocabularies.Vocabularies.CluedInOrganization.CodesCVR);
-
                 //Semler vocabs
                 AddMapping(OutputStreetline, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrLine1);
-                AddMapping(OutputStednavn, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrPlace);
-                AddMapping(OutputStrname, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrStreet);
-                AddMapping(OutputHounoNum, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrStrNum);
-                AddMapping(OutputHounoAlpha, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrHouseChar);
-                AddMapping(OutputFloor, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrFloor);
-                AddMapping(OutputSuite, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrSuite);
-                AddMapping(Per1Lokalitet, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrLocPer1);
-                AddMapping(Per1Streetline, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrLine1Per1);
-                AddMapping(Per1Stednavn, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrPlacePer1);
-                AddMapping(Per1AdrForeign1, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.ForeignAdr1Per1);
-                AddMapping(Per1AdrForeign2, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.ForeignAdr2Per1);
-                AddMapping(Per1AdrForeign3, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.ForeignAdr3Per1);
-                AddMapping(Per1AdrForeign4, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.ForeignAdr4Per1);
-                AddMapping(Per1AdrForeign5, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.ForeignAdr5Per1);
-                AddMapping(Per2Lokalitet, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrLocPer2);
-                AddMapping(Per2Streetline, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrLine1Per2);
-                AddMapping(Per2Stednavn, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrPlacePer2);
-                AddMapping(Per2AdrForeign1, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.ForeignAdr1Per2);
-                AddMapping(Per2AdrForeign2, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.ForeignAdr2Per2);
-                AddMapping(Per2AdrForeign3, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.ForeignAdr3Per2);
-                AddMapping(Per2AdrForeign4, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.ForeignAdr4Per2);
-                AddMapping(Per2AdrForeign5, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.ForeignAdr5Per2);
-                AddMapping(OutputCareof, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.COName);
-                AddMapping(Per1Careof, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.CONamePer1);
-                AddMapping(Per2Careof, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.CONamePer2);
                 AddMapping(OutputPdistname, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.City);
-                AddMapping(Per1Pdistname, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.CityPer1);
-                AddMapping(Per2Pdistname, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.CityPer2);
-                AddMapping(OutputNameFirst, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.FirstName);
-                AddMapping(Per1NameLast, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.LastNamePer1);
-                AddMapping(Per1NameFirsts, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.FirstNamePer1);
-                AddMapping(OutputNameLast, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.LastName);
-                AddMapping(Per2NameLast, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.LastNamePer2);
+                AddMapping(OutputCareof, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.COName);
                 AddMapping(OutputName, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.Name);
-                AddMapping(Per1InputName, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.FullNamePer1);
-                AddMapping(Per1NameAdr, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.NamePer1);
-                AddMapping(Per2InputName, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.FullNamePer2);
-                AddMapping(Per2NameAdr, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.NamePer2);
-                AddMapping(Mobile, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.MobPhoneNum);
                 AddMapping(OutputPcode, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.PostalCode);
-                AddMapping(Per1Pcode, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.PostalCodePer1);
-                AddMapping(Per2Pcode, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.PostalCodePer2);
-                AddMapping(OutputLokalitet, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.AdrLoc);
-                AddMapping(Per2NameFirsts, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.FirstNamePer2);
-                AddMapping(Landline, Semler.Common.Vocabularies.SemlerVocabularies.BusinessCustomer.LandPhoneNum);
             }
-            else
+            else //Private
             {
-                //Need to check this out after we get some data from CSV and map the rest of data
-                AddMapping(ADRESSE, CluedIn.Core.Data.Vocabularies.Vocabularies.CluedInUser.HomeAddress);
-                AddMapping(POSTBY, CluedIn.Core.Data.Vocabularies.Vocabularies.CluedInUser.HomeAddressZipCode);
-                AddMapping(KUNTLF, CluedIn.Core.Data.Vocabularies.Vocabularies.CluedInUser.PhoneNumber);
-
                 //Semler vocabs
+                AddMapping(OutputFloor, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrFloor);
+                AddMapping(OutputHounoAlpha, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrHouseChar);
                 AddMapping(OutputStreetline, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrLine1);
+                AddMapping(Per1Streetline, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrLine1Per1);
                 AddMapping(OutputStednavn, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrPlace);
+                AddMapping(Per1Stednavn, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrPlacePer1);
                 AddMapping(OutputStrname, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrStreet);
                 AddMapping(OutputHounoNum, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrStrNum);
-                AddMapping(OutputHounoAlpha, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrHouseChar);
-                AddMapping(OutputFloor, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrFloor);
                 AddMapping(OutputSuite, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrSuite);
-                AddMapping(Per1Lokalitet, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrLocPer1);
-                AddMapping(Per1Streetline, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrLine1Per1);
-                AddMapping(Per1Stednavn, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrPlacePer1);
-                AddMapping(Per1AdrForeign1, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.ForeignAdr1Per1);
-                AddMapping(Per1AdrForeign2, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.ForeignAdr2Per1);
-                AddMapping(Per1AdrForeign3, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.ForeignAdr3Per1);
-                AddMapping(Per1AdrForeign4, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.ForeignAdr4Per1);
-                AddMapping(Per1AdrForeign5, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.ForeignAdr5Per1);
-                AddMapping(Per2Lokalitet, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrLocPer2);
-                AddMapping(Per2Streetline, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrLine1Per2);
-                AddMapping(Per2Stednavn, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrPlacePer2);
-                AddMapping(Per2AdrForeign1, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.ForeignAdr1Per2);
-                AddMapping(Per2AdrForeign2, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.ForeignAdr2Per2);
-                AddMapping(Per2AdrForeign3, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.ForeignAdr3Per2);
-                AddMapping(Per2AdrForeign4, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.ForeignAdr4Per2);
-                AddMapping(Per2AdrForeign5, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.ForeignAdr5Per2);
-                AddMapping(OutputCareof, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.COName);
-                AddMapping(Per1Careof, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.CONamePer1);
-                AddMapping(Per2Careof, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.CONamePer2);
                 AddMapping(OutputPdistname, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.City);
                 AddMapping(Per1Pdistname, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.CityPer1);
-                AddMapping(Per2Pdistname, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.CityPer2);
+                AddMapping(OutputCareof, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.COName);
+                AddMapping(Per1Careof, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.CONamePer1);
                 AddMapping(OutputNameFirst, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.FirstName);
-                AddMapping(Per1NameLast, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.LastNamePer1);
                 AddMapping(Per1NameFirsts, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.FirstNamePer1);
+                AddMapping(Landline, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.LandPhoneNum);
                 AddMapping(OutputNameLast, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.LastName);
-                AddMapping(Per2NameLast, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.LastNamePer2);
+                AddMapping(Per1NameLast, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.LastNamePer1);
+                AddMapping(Mobile, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.MobPhoneNr);
                 AddMapping(OutputName, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.Name);
-                AddMapping(Per1InputName, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.FullNamePer1);
                 AddMapping(Per1NameAdr, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.NamePer1);
-                AddMapping(Per2InputName, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.FullNamePer2);
-                AddMapping(Per2NameAdr, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.NamePer2);
-                AddMapping(Mobile, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.MobPhoneNum);
                 AddMapping(OutputPcode, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.PostalCode);
                 AddMapping(Per1Pcode, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.PostalCodePer1);
-                AddMapping(Per2Pcode, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.PostalCodePer2);
-                AddMapping(OutputLokalitet, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.AdrLoc);
-                AddMapping(Per2NameFirsts, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.FirstNamePer2);
-                AddMapping(Landline, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.LandPhoneNum);
+       
             }
         }
 
