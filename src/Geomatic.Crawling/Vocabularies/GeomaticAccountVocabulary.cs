@@ -15,15 +15,15 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
 
             AddGroup("Geometic Account Details", group =>
             {
-                FHANUM = group.Add(new VocabularyKey("FHANUM", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("FHANUM"));
+                FHANUM = group.Add(new VocabularyKey("FHANUM", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("FHANUM"));
                 KUNLOEB = group.Add(new VocabularyKey("KUNLOEB", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("KUNLOEB"));
-                NAVN = group.Add(new VocabularyKey("NAVN", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("NAVN"));
-                ADRESSE = group.Add(new VocabularyKey("ADRESSE", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("ADRESSE"));
-                ADRESSE2 = group.Add(new VocabularyKey("ADRESSE2", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("ADRESSE 2"));
-                POSTBY = group.Add(new VocabularyKey("POSTBY", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("POSTBY"));
-                KUNTLF = group.Add(new VocabularyKey("KUNTLF", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("KUNTLF"));
-                CPRNUM = group.Add(new VocabularyKey("CPRNUM", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("CPRNUM"));
-                CPRNUM2 = group.Add(new VocabularyKey("CPRNUM2", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("CPRNUM 2"));
+                NAVN = group.Add(new VocabularyKey("NAVN", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("NAVN"));
+                ADRESSE = group.Add(new VocabularyKey("ADRESSE", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("ADRESSE"));
+                ADRESSE2 = group.Add(new VocabularyKey("ADRESSE2", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("ADRESSE 2"));
+                POSTBY = group.Add(new VocabularyKey("POSTBY", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("POSTBY"));
+                KUNTLF = group.Add(new VocabularyKey("KUNTLF", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("KUNTLF"));
+                CPRNUM = group.Add(new VocabularyKey("CPRNUM", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("CPRNUM"));
+                CPRNUM2 = group.Add(new VocabularyKey("CPRNUM2", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("CPRNUM 2"));
                 CVRNUM = group.Add(new VocabularyKey("CVRNUM", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("CVRNUM"));
                 OutputName = group.Add(new VocabularyKey("OutputName", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Name"));
                 OutputNameFirst = group.Add(new VocabularyKey("OutputNameFirst", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Output Name First"));
@@ -49,7 +49,7 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
                 OutputNameOrigin = group.Add(new VocabularyKey("OutputNameOrigin", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Output Name Origin"));
                 AddressChange = group.Add(new VocabularyKey("AddressChange", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Address Change"));
                 Duplicate = group.Add(new VocabularyKey("Duplicate", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Duplicate"));
-                DuplicateId = group.Add(new VocabularyKey("DuplicateId", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Duplicate Id"));
+                DuplicateId = group.Add(new VocabularyKey("DuplicateId", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Duplicate Id"));
                 Per1PnrValidation = group.Add(new VocabularyKey("Per1PnrValidation", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 1 Pnr Validation"));
                 Per2PnrValidation = group.Add(new VocabularyKey("Per2PnrValidation", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 2 Pnr Validation"));
                 Per1InputName = group.Add(new VocabularyKey("Per1InputName", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 1 Input Name"));
@@ -57,7 +57,7 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
                 Per1CprStatus = group.Add(new VocabularyKey("Per1CprStatus", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Cpr Status"));
                 Per1Protect = group.Add(new VocabularyKey("Per1Protect", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Protect"));
                 Per1AdvptectRobinson = group.Add(new VocabularyKey("Per1AdvptectRobinson", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Advptect Robinson"));
-                Per1AdvptectRobinsonDate = group.Add(new VocabularyKey("Per1AdvptectRobinsonDate", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 1 Advptect Robinson Date"));
+                Per1AdvptectRobinsonDate = group.Add(new VocabularyKey("Per1AdvptectRobinsonDate", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Advptect Robinson Date"));
                 Per1Movdat = group.Add(new VocabularyKey("Per1Movdat", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 1 Movdat"));
                 Per1NameFirsts = group.Add(new VocabularyKey("Per1NameFirsts", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Name Firsts"));
                 Per1NameLast = group.Add(new VocabularyKey("Per1NameLast", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 1 Name Last"));
@@ -87,7 +87,7 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
                 Per2Protect = group.Add(new VocabularyKey("Per2Protect", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 2 Protect"));
                 Per2AdvptectRobinson = group.Add(new VocabularyKey("Per2AdvptectRobinson", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 2 Advptect Robinson"));
                 Per2AdvptectRobinsonDate = group.Add(new VocabularyKey("Per2AdvptectRobinsonDate", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 2 Advptect Robinson Date"));
-                Per2Movdat = group.Add(new VocabularyKey("Per2Movdat", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 2 Movdat"));
+                Per2Movdat = group.Add(new VocabularyKey("Per2Movdat", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible).WithDisplayName("Per 2 Movdat"));
                 Per2NameFirsts = group.Add(new VocabularyKey("Per2NameFirsts", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 2 Name Firsts"));
                 Per2NameLast = group.Add(new VocabularyKey("Per2NameLast", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 2 Name Last"));
                 Per2NameAdr = group.Add(new VocabularyKey("Per2NameAdr", VocabularyKeyDataType.Text, VocabularyKeyVisibility.HiddenInFrontendUI).WithDisplayName("Per 2 Name Adr"));
