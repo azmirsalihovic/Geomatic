@@ -44,6 +44,9 @@ namespace CluedIn.Provider.Geomatic
             if (configuration.ContainsKey(GeomaticConstants.KeyName.FilePath))
             { geomaticCrawlJobData.FilePath = configuration[GeomaticConstants.KeyName.FilePath].ToString(); }
 
+            if (configuration.ContainsKey(GeomaticConstants.KeyName.FilePath1))
+            { geomaticCrawlJobData.FilePath1 = configuration[GeomaticConstants.KeyName.FilePath1].ToString(); }
+
             return await Task.FromResult(geomaticCrawlJobData);
         }
 

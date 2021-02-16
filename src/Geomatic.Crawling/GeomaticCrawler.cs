@@ -23,11 +23,20 @@ namespace CluedIn.Crawling.Geomatic
 
             var client = clientFactory.CreateNew(geomaticcrawlJobData);
 
+            //Get the list with customer id's from CSV file
+            var KunloebIDList = client.GetKunloebIDList(geomaticcrawlJobData.FilePath1);
+
             foreach (var item in client.Get(geomaticcrawlJobData.FilePath))
             {
                 if (!string.IsNullOrEmpty(item.KUNLOEB))
                 {
-                    yield return item;
+                    if (KunloebIDList != null)
+                    {
+                        if (KunloebIDList.Contains(item.KUNLOEB) || KunloebIDList.Count == 0)
+                            yield return item;
+                    }
+                    else
+                        yield return item;
                 }
             }
         }

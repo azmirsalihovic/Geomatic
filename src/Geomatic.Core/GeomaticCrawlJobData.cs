@@ -6,5 +6,6 @@ namespace CluedIn.Crawling.Geomatic.Core
     {
         public string ApiKey { get; set; }
         public string FilePath { get; set; }
+        public string FilePath1 { get; set; }
     }
 }

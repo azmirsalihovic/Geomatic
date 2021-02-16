@@ -11,6 +11,7 @@ namespace CluedIn.Crawling.Geomatic.Core
         {
             public const string ApiKey = nameof(ApiKey);
             public const string FilePath = nameof(FilePath);
+            public const string FilePath1 = nameof(FilePath1);
         }
 
         // TODO Complete the following section
@@ -33,13 +34,27 @@ namespace CluedIn.Crawling.Geomatic.Core
             token = new Control[]
             {
         // You can define controls to show in the GUI in order to authenticate with this integration
-        //        new Control()
-        //        {
-        //            displayName = "API key",
-        //            isRequired = false,
-        //            name = "api",
-        //            type = "text"
-        //        }
+                new Control()
+                {
+                    displayName = "API key",
+                    isRequired = false,
+                    name = nameof(KeyName.ApiKey),
+                    type = "text"
+                },
+                new Control()
+                {
+                    displayName = "File path",
+                    isRequired = false,
+                    name = nameof(KeyName.FilePath),
+                    type = "text"
+                },
+                new Control()
+                {
+                    displayName = "File path",
+                    isRequired = false,
+                    name = nameof(KeyName.FilePath1),
+                    type = "text"
+                }
             }
         };
 
