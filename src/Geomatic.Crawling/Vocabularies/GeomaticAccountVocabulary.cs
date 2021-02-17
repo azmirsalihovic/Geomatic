@@ -147,7 +147,6 @@ namespace CluedIn.Crawling.Geometic.Vocabularies
                 AddMapping(Per1NameAdr, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.NamePer1);
                 AddMapping(OutputPcode, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.PostalCode);
                 AddMapping(Per1Pcode, Semler.Common.Vocabularies.SemlerVocabularies.PrivateCustomer.PostalCodePer1);
-       
             }
         }
 
