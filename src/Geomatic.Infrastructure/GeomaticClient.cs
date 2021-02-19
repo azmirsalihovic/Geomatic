@@ -192,8 +192,7 @@ namespace CluedIn.Crawling.Geomatic.Infrastructure
                     catch (Exception e)
                     {
                         ErrorString = e.Message;
-                        //throw;
-                        break;
+                        continue;
                     }
                     yield return returnValue;
                 }
