@@ -1,18 +1,22 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using CluedIn.Core.Crawling;
 using CluedIn.Crawling.Geomatic.Core;
 using CluedIn.Crawling.Geomatic.Infrastructure.Factories;
 using CluedIn.Crawling.Geometic.Core.Models;
+using static CluedIn.Crawling.Geomatic.Infrastructure.GeomaticClient;
 
 namespace CluedIn.Crawling.Geomatic
 {
     public class GeomaticCrawler : ICrawlerDataGenerator
     {
         private readonly IGeomaticClientFactory clientFactory;
-        private readonly string FilePath = @"C:\Users\asa\OneDrive - Kapacity AS\Projekter\SEMLER\GeomaticData\TestCustomersOutput.csv";
+        private readonly string filePathOutput = @"C:\Users\asa\OneDrive - Kapacity AS\Projekter\SEMLER\GeomaticData\TestCustomersOutput.csv";
         private readonly bool createCSVFile = false;
+
         public GeomaticCrawler(IGeomaticClientFactory clientFactory)
         {
             this.clientFactory = clientFactory;
@@ -27,60 +31,73 @@ namespace CluedIn.Crawling.Geomatic
 
             var client = clientFactory.CreateNew(geomaticcrawlJobData);
 
-            //Get the list with customer id's from CSV file
-            var KunloebIDList = client.GetKunloebIDList(geomaticcrawlJobData.FilePath1);
-            List<Customers> customerList = new List<Customers>();
-
-            foreach (var item in client.Get(geomaticcrawlJobData.FilePath))
+            if (createCSVFile)
             {
-                if (!string.IsNullOrEmpty(item.KUNLOEB))
+                GetCSVOutput(client, geomaticcrawlJobData.FilePath, geomaticcrawlJobData.FilePath1);
+            }
+            else
+            {
+                foreach (var item in client.Get(geomaticcrawlJobData.FilePath))
                 {
-                    if (KunloebIDList != null)
+                    if (!string.IsNullOrEmpty(item.KUNLOEB))
                     {
-                        if (KunloebIDList.Contains(item.KUNLOEB) || KunloebIDList.Count == 0)
+                        yield return item;
+                    }
+                }
+            }
+        }
+
+        private void GetCSVOutput(Infrastructure.GeomaticClient client, string filePath, string filePath1)
+        {
+            var customerListFull = client.GetKunloebIDList(filePath1);
+            var customerListCombined = new List<Customers>();
+
+            foreach (var item in client.Get(filePath))
+            {
+                if (createCSVFile)
+                {
+                    var containsItem = customerListFull.Any(items => items.KUKCustomerID == item.KUNLOEB);
+
+                    if (containsItem)
+                    {
+                        customerListCombined.Add(new Customers
                         {
-                            if (createCSVFile)
-                            {
-                                customerList.Add(new Customers
-                                {
-                                    KUKCustomerID = item.KUNLOEB,
-                                    Match = "Y"
-                                });
-                            }
-                            yield return item;
-                        }
+                            KUKCustomerID = item.KUNLOEB,
+                            Match = "Y"
+                        });
                     }
                     else
-                        yield return item;
+                    {
+                        customerListCombined.Add(new Customers
+                        {
+                            KUKCustomerID = item.KUNLOEB,
+                            Match = "N"
+                        });
+                    }
                 }
             }
 
-            if (createCSVFile)
+            try
             {
+                //Clear CSV file
+                File.WriteAllText(filePathOutput, "");
+
                 //Build output to a CSV file
                 var csv = new StringBuilder();
                 var header = string.Format("{0};{1}", "KUKCustomerID", "Match");
                 csv.AppendLine(header);
 
-                foreach (Customers item in customerList)
+                foreach (var item in customerListCombined)
                 {
                     var newLine = string.Format("{0};{1}", item.KUKCustomerID, item.Match);
                     csv.AppendLine(newLine);
                 }
 
-                File.Create(FilePath);
-                File.WriteAllText(FilePath, csv.ToString());
+                File.WriteAllText(filePathOutput, csv.ToString());
             }
-        }
-
-        public class Customers
-        {
-            public string KUKCustomerID { get; set; }
-            public string Match { get; set; }
-
-            public override string ToString()
+            catch (Exception)
             {
-                return string.Format("KUKCustomerID {0}; Match {1}", KUKCustomerID, Match);
+                throw;
             }
         }
     }

@@ -199,9 +199,9 @@ namespace CluedIn.Crawling.Geomatic.Infrastructure
             }
         }
 
-        public List<string> GetKunloebIDList(string filepath)
+        public List<Customers> GetKunloebIDList(string filepath)
         {
-            List<string> KunloebIDList = new List<string>();
+            List<Customers> KunloebIDList = new List<Customers>();
             try
             {
                 using (var parser = new TextFieldParser(filepath))
@@ -215,7 +215,11 @@ namespace CluedIn.Crawling.Geomatic.Infrastructure
                         try
                         {
                             var filterByKunloebIds = parser.ReadFields();
-                            KunloebIDList.Add(filterByKunloebIds[1]);
+                            //KunloebIDList.Add(filterByKunloebIds[1]);
+                            KunloebIDList.Add(new Customers
+                            {
+                                KUKCustomerID = filterByKunloebIds[1]
+                            });
                         }
                         catch (Exception)
                         {
@@ -229,6 +233,17 @@ namespace CluedIn.Crawling.Geomatic.Infrastructure
                 return null;
             }
             return KunloebIDList;
+        }
+
+        public class Customers
+        {
+            public string KUKCustomerID { get; set; }
+            public string Match { get; set; }
+
+            public override string ToString()
+            {
+                return string.Format("KUKCustomerID {0};Match {1}", KUKCustomerID, Match);
+            }
         }
     }
 }

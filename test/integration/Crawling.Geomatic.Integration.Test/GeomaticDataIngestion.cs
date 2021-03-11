@@ -18,8 +18,8 @@ namespace CluedIn.Crawling.Geomatic.Integration.Test
 
         [Theory]
         [InlineData("/Provider/Root", 1)]
-        [InlineData("/Organization", 231539)] //231539
-        [InlineData("/Infrastructure/User", 1781577)] //1781577
+        [InlineData("/Organization", 231539)] //231539 (10.227 som findes i listen)
+        [InlineData("/Infrastructure/User", 1781577)] //1781577 (89.823 som findes i listen)
         //TODO: Add details for the count of entityTypes your test produces
         //[InlineData("SOME_ENTITY_TYPE", 1)]
         public void CorrectNumberOfEntityTypes(string entityType, int expectedCount)
